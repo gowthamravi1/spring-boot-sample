@@ -1,0 +1,21 @@
+spring.datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db_example
+    username: springuser
+    password: ThePassword
+spring.jpa:
+        # Specify the DBMS
+        # database: h2
+        # Show or not log for each sql query
+        show-sql: false
+        # Hibernate settings are prefixed with spring.jpa.hibernate.*
+        hibernate:
+            ddl-auto: validate # validate | update | create | create-drop
+            dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+            naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
+            show_sql: false 
+            format_sql: true
+flyway:
+  enabled: true
+  locations: classpath:migration
+  initOnMigrate: true
